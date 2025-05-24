@@ -3,13 +3,13 @@ import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpaci
 import Task from '../components/Task';
 
 export default function Index() {
-  const [task, setTask] = useState();
-  const [taskItems, setTaskItems] = useState([]);
+  const [task, setTask] = useState<string>("");
+  const [taskItems, setTaskItems] = useState<string[]>([]);
 
   const handleAddTask = () => {
     Keyboard.dismiss();
     setTaskItems([...taskItems, task])
-    setTask(null);
+    setTask("");
   }
 
   const completeTask = (index: number) => {
