@@ -18,7 +18,7 @@
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
-      "package": "de.cmg.simplethanks"
+      "package": "com.example.todolist"
     },
     "web": {
       "bundler": "metro",
