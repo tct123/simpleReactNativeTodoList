@@ -1,10 +1,57 @@
 import React, { useState } from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, View, TextInput, TouchableOpacity, Keyboard, ScrollView, Platform } from 'react-native';
-import Task from '../components/Task';
+import Task from '@/components/Task';
+import isDarkMode from "@/components/CheckDarkMode";
 
 export default function Index() {
   const [task, setTask] = useState<string>("");
   const [taskItems, setTaskItems] = useState<string[]>([]);
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: isDarkMode() ? "#000" : '#E8EAED',
+    },
+    tasksWrapper: {
+      paddingTop: 80,
+      paddingHorizontal: 20,
+    },
+    sectionTitle: {
+      color: isDarkMode() ? "#fff" : "#000",
+      fontSize: 24,
+      fontWeight: 'bold'
+    },
+    items: {
+      marginTop: 30,
+    },
+    writeTaskWrapper: {
+      position: 'absolute',
+      bottom: 60,
+      width: '100%',
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      alignItems: 'center'
+    },
+    input: {
+      paddingVertical: 15,
+      paddingHorizontal: 15,
+      backgroundColor: '#FFF',
+      borderRadius: 60,
+      borderColor: '#C0C0C0',
+      borderWidth: 1,
+      width: 250,
+    },
+    addWrapper: {
+      width: 60,
+      height: 60,
+      backgroundColor: '#FFF',
+      borderRadius: 60,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderColor: '#C0C0C0',
+      borderWidth: 1,
+    },
+    addText: {},
+  });
 
   const handleAddTask = () => {
     Keyboard.dismiss();
@@ -64,49 +111,3 @@ export default function Index() {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#E8EAED',
-  },
-  tasksWrapper: {
-    paddingTop: 80,
-    paddingHorizontal: 20,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: 'bold'
-  },
-  items: {
-    marginTop: 30,
-  },
-  writeTaskWrapper: {
-    position: 'absolute',
-    bottom: 60,
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'space-around',
-    alignItems: 'center'
-  },
-  input: {
-    paddingVertical: 15,
-    paddingHorizontal: 15,
-    backgroundColor: '#FFF',
-    borderRadius: 60,
-    borderColor: '#C0C0C0',
-    borderWidth: 1,
-    width: 250,
-  },
-  addWrapper: {
-    width: 60,
-    height: 60,
-    backgroundColor: '#FFF',
-    borderRadius: 60,
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderColor: '#C0C0C0',
-    borderWidth: 1,
-  },
-  addText: {},
-});
