@@ -12,7 +12,7 @@ export default function Index() {
     setTask(null);
   }
 
-  const completeTask = (index) => {
+  const completeTask = (index: number) => {
     let itemsCopy = [...taskItems];
     itemsCopy.splice(index, 1);
     setTaskItems(itemsCopy)
