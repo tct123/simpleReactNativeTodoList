@@ -38,7 +38,7 @@ export default function Index() {
       borderRadius: 60,
       borderColor: '#C0C0C0',
       borderWidth: 1,
-      width: 250,
+      width: "90%",
     },
     addWrapper: {
       width: 60,
